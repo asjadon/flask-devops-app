@@ -8,6 +8,7 @@ venv/
 *.tfstate.backup
 .terraform/
 terraform.tfvars
+.terraform.lock.hcl
 
 # Ansible
 *.retry
