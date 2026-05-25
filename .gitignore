@@ -1,3 +1,26 @@
+# Python
 __pycache__/
 *.pyc
 venv/
+
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+terraform.tfvars
+
+# Ansible
+*.retry
+
+# Kubernetes
+kubeconfig
+
+# Secrets & Keys
+*.pem
+.env
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store

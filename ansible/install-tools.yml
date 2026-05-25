@@ -1,0 +1,34 @@
+- name: Install Docker and Kubernetes Tools
+  hosts: servers
+  become: yes
+
+  tasks:
+
+    - name: Update apt packages
+      apt:
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name:
+          - docker.io
+          - curl
+          - apt-transport-https
+        state: present
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Add ubuntu user to docker group
+      user:
+        name: ubuntu
+        groups: docker
+        append: yes
+
+    - name: Install kubectl using snap
+      snap:
+        name: kubectl
+        classic: yes
